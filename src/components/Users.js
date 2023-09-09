@@ -13,6 +13,12 @@ class Users extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.users.length === 0) {
+            throw Error('Error happened in our app!!!')
+        }
+    }
+
     toggleUsersHandler() {
         this.setState((curState) => {
             return {showUsers: !curState.showUsers}
